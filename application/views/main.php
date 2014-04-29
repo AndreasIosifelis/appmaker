@@ -10,7 +10,15 @@
 <body>
 
     <div id="AppContainer"></div>
-    
+    <script src="assets/js/libs/handlebars.js"></script>
+    <?php
+        $this->files->initFiles("js");
+    ?>
+    <script>
+        $(function(){
+            $.UserController.index("<?=$sessionId?>");
+        });
+    </script>
 </body>
 </html>
 

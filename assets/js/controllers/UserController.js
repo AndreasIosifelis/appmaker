@@ -1,9 +1,10 @@
 $.extend({
     UserController: {
-        index: function(){
-            alert("START");
+        index: function(sessionId){
+            console.log(sessionId);
         }
     }
 });
+
 
 
