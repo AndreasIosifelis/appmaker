@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+<link href="../assets/css/resets.css" rel="stylesheet" type="text/css"/>
+  <meta charset="utf-8">
+  <title>Layout</title>
+  <style type="text/css">
+      
+      body{
+          background-color:#f1f1f1;
+      }
+      
+      .viewport{
+          position:static;
+      }
+      
+      .app-panel{
+          position:absolute;
+          padding:5px;
+      }
+      
+      .north-panel{          
+          top:0px;
+          left:0px;
+          right:0px;
+          height:60px;
+          z-index:1;
+      }
+      
+      .west-panel{          
+          top:70px;
+          left:0px;
+          bottom:0px;
+          width:195px;          
+          z-index: 2;
+      }
+      
+      .center-panel{
+          top:70px;
+          left:200px;
+          bottom:0px;
+          right:0px;
+          z-index: 1;
+      }
+      
+      .ui-menu-item{
+            min-width:180px !important;
+        }
+      
+  </style>
+  
+  <script>
+      $(function(){
+          
+          
+        $("#AppTabPanel").tabs({
+                heightStyle: "fill"
+        });
+            
+        $("#AppMainMenu").menu();
+          
+          
+      });
+  </script>
+</head>
+<body>
+
+    <div id="AppContainer" class="viewport">
+        <div class="north-panel app-panel">North</div>
+        <div class="west-panel app-panel">
+            
+            <ul id="AppMainMenu">
+                <li class="ui-state-disabled"><a href="#">Main Menu</a></li>
+                <li>
+                    <a href="#">Persons</a>
+                    <ul>
+                        <li><a href="#">Users</a></li>
+                        <li><a href="#">Customer</a></li>
+                    </ul>                    
+                </li>
+                <li>
+                    <a href="#">Settings</a>
+                    <ul>
+                        <li><a href="#">Users</a></li>
+                        <li><a href="#">Customer</a></li>
+                    </ul>
+                    
+                </li>
+                <li>
+                    <a href="#">My Account</a>
+                    <ul>
+                        <li><a href="#">Change Login Credentials</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>                    
+                </li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+            
+        </div>
+        <div class="center-panel app-panel">
+            <div id="AppTabPanel">
+                <ul>
+                    <li><a href='#tabs-1'>Dashboard</a><span class='ui-icon ui-icon-close' role='presentation'>Remove Tab</span></li>
+                    <li><a href='#tabs-2'>User 34498</a><span class='ui-icon ui-icon-close' role='presentation'>Remove Tab</span></li>
+                </ul>
+                <div id="tabs-1">
+                    <p>DashBoard Content</p>
+                </div>
+                <div id="tabs-2">
+                    <p>User 34498 Content</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

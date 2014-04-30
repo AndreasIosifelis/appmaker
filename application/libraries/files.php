@@ -5,15 +5,18 @@ class Files
     private $jsFilePaths = array(
         "assets/js/libs/dollar.js",
         "assets/js/components/BodyMask.js",
-        "assets/js/controllers/UserController.js"
+        "assets/js/components/TabPanel.js",
+        "assets/js/components/Panel.js"
     );
     
     private $cssFilePaths = array(
-        "assets/css/style.css"
+        "assets/css/resets.css",
+        "assets/css/structure.css",
+        "assets/css/theme.css"
     );
     
-    private $search = array("   ", " ", "return", "var", "function", "\r\n", "\n", "\r");
-    private $replace = array("", "", "return ", "var ", "function ","", "", "");
+    private $search = array("   ", " ","new", "return", "var", "function", "\r\n", "\n", "\r");
+    private $replace = array("", "","new ", "return ", "var ", "function ","", "", "");
     private $comments = "/(?:(?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:(?<!\:|\\\)\/\/.*))/";
     
     public function initFiles($mode)

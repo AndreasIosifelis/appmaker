@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <div id="AppContainer"></div>
+    <div id="AppContainer" class="viewport"></div>
     <script src="assets/js/libs/handlebars.js"></script>
     <script src="assets/js/libs/md5.js"></script>
     <?php

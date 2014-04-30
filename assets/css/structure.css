@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 30 Απρ 2014, 3:00:26 μμ
+    Author     : andreas
+*/
+body{
+    background-color:#f1f1f1;
+}
+
+.viewport{
+    position:static;
+}
+
+.app-panel{
+    position:absolute;
+    padding:5px;
+}
+
+.north-panel{          
+    top:0px;
+    left:0px;
+    right:0px;
+    height:60px;
+    z-index:1;
+}
+
+.west-panel{          
+    top:70px;
+    left:0px;
+    bottom:0px;
+    width:195px;          
+    z-index: 2;
+}
+
+.center-panel{
+    top:70px;
+    left:200px;
+    bottom:0px;
+    right:0px;
+    z-index: 1;
+}
+
+.ui-menu-item{
+    min-width:180px !important;
+}
+

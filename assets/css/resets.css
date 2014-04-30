@@ -1,0 +1,47 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 30 Απρ 2014, 2:51:54 μμ
+    Author     : andreas
+*/
+*{
+    font-family: Trebuchet MS;
+    font-size:13px;
+    outline:none;
+    margin:0px;
+    padding:0px;
+}
+
+input[type='text'],
+input[type='password'],
+select {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    border-radius:2px;
+    border:1px solid #ccc;
+    box-shadow:inset 0px 0px 5px #ccc;
+    line-height:normal;
+}
+
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+ul{
+    list-style-type:none;
+}
+
+.fl{
+    float:left;
+}
+.fr{
+    float:right;
+}
+
+
+
