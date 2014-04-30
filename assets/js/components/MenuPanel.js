@@ -1,0 +1,7 @@
+$.extend({
+    MenuPanel:function(cfg){
+        
+    }
+});
+
+
