@@ -8,8 +8,10 @@ class Files
         "assets/js/components/TabPanel.js",
         "assets/js/components/MenuPanel.js",
         "assets/js/components/Panel.js",
+        "assets/js/components/GridPanel.js",
         "assets/js/layouts/MainLayout.js",
         "assets/js/layouts/LoginLayout.js",
+        "assets/js/menus/MainMenu.js",
         "assets/js/Application.js"
     );
     
