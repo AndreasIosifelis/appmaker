@@ -19,7 +19,7 @@
         $this->files->initFiles("js");
     ?>
     <script>
-        $($.UserController.index("<?=$sessionId?>"));
+        $($.Application.start("<?=$sessionId?>"));
     </script>
 </body>
 </html>

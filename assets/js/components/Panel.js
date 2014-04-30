@@ -1,16 +1,15 @@
 $.extend({
-    Panel: function(cfg){
+    Panel: function(_options) {
         this.options = $.extend({
             cls: "app-panel",
             renderTo: undefined
-        }, cfg);
-        
+        }, _options);
+
         this.panel = $("<div />");
-        
-        this.initComponent = function(){
+
+        this.initComponent = function() {
             this.renderTo.append(this.panel);
-        };   
-        
+        };
     }
 });
 

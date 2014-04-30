@@ -6,7 +6,11 @@ class Files
         "assets/js/libs/dollar.js",
         "assets/js/components/BodyMask.js",
         "assets/js/components/TabPanel.js",
-        "assets/js/components/Panel.js"
+        "assets/js/components/MenuPanel.js",
+        "assets/js/components/Panel.js",
+        "assets/js/layouts/MainLayout.js",
+        "assets/js/layouts/LoginLayout.js",
+        "assets/js/Application.js"
     );
     
     private $cssFilePaths = array(
