@@ -3,14 +3,18 @@
 class Files
 {
     private $jsFilePaths = array(
-        "assets/js/libs/handlebars.js",
-        "assets/js/libs/md5.js",
         "assets/js/libs/dollar.js",
         "assets/js/components/BodyMask.js",
         "assets/js/controllers/UserController.js"
     );
     
-    private $cssFilePaths = array();
+    private $cssFilePaths = array(
+        "assets/css/style.css"
+    );
+    
+    private $search = array("   ", " ", "return", "var", "function", "\r\n", "\n", "\r");
+    private $replace = array("", "", "return ", "var ", "function ","", "", "");
+    private $comments = "/(?:(?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:(?<!\:|\\\)\/\/.*))/";
     
     public function initFiles($mode)
     {
@@ -24,19 +28,15 @@ class Files
                 break;
             case 'testing':
             case 'production':
-                if($mode == "js")
-                    $this->loadFile ($mode, "app-min.js");
-                else if($mode == "css")
-                    $this->loadFile($mode, "app-min.css");
+                $this->loadMinified($mode);
                 break;
                     
         }
     }
     
-    private function loadFiles($mode, $txt)
+    private function loadFiles($mode)
     {
-        $ctx = file_get_contents($txt);
-        $files = explode("\n", $ctx);
+        $files = $mode == "js" ? $this->jsFilePaths : $this->cssFilePaths;
         foreach($files as $file)
         {
             $this->loadFile($mode, $file);
@@ -53,6 +53,31 @@ class Files
     
     private function loadMinified($mode)
     {
+        
+        if($mode == "js")
+        {
+            echo "<script>";
+            foreach($this->jsFilePaths as $file)
+            {
+                $ctx = file_get_contents($file);
+                $ctx = preg_replace($this->comments, "", $ctx);
+                $ctx = str_replace($this->search, $this->replace, $ctx);                
+                echo $ctx;
+            }
+            echo "</script>";
+        }
+        else if($mode == "css")
+        {
+            echo "<style type='text/css'>";
+            foreach($this->cssFilePaths as $file)
+            {
+                $ctx = file_get_contents($file);
+                $ctx = preg_replace($this->comments, "", $ctx);
+                $ctx = str_replace($this->search, $this->replace, $ctx);
+                echo $ctx;
+            }
+            echo "</style>";
+        }
         
     }
     
