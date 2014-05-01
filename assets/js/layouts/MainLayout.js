@@ -7,15 +7,18 @@ $.extend({
         
         
         northPanel
-                .addClass("north-panel app-panel")
+                .addClass("north-panel")
+                .addClass("app-panel")
                 .html("North Panel");
         
         westPanel
-                .addClass("west-panel app-panel")
+                .addClass("west-panel")
+                .addClass("app-panel")
                 .html("West Panel");
         
         centerPanel
-                .addClass("center-panel app-panel")
+                .addClass("center-panel")
+                .addClass("app-panel")
                 .html("Center Panel");
         
         

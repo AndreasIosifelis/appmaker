@@ -15,6 +15,7 @@ $.extend({
                 list.append(this.createNode(nodes[i]));
                 if(nodes[i].children){
                     this.createList(nodes[i].children, true);
+                    break;
                 }
                 continue;
             }
