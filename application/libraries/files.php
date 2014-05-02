@@ -12,7 +12,8 @@ class Files
         "public/js/components/GridPanel.js",
         "public/js/layouts/MainLayout.js",
         "public/js/layouts/LoginLayout.js",
-        "public/js/menus/MainMenu.js",
+        "public/js/sceleton/MainMenu.js",
+        "public/js/sceleton/MainTabPanel.js",
         "public/js/Application.js"
     );
     

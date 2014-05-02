@@ -13,16 +13,15 @@ $.extend({
         
         westPanel
                 .addClass("west-panel")
-                .addClass("app-panel")
-                .html("West Panel");
+                .addClass("app-panel");
         
         centerPanel
                 .addClass("center-panel")
-                .addClass("app-panel")
-                .html("Center Panel");
+                .addClass("app-panel");
         
         
         $.MainMenu(westPanel);
+        $.MainTabPanel(centerPanel);
         
         
         $("#AppContainer")

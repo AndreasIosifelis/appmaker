@@ -1,44 +1,61 @@
 $.extend({
-    TabPanel:function(cfg){
-        
+    TabPanel: function(_options) {
+
         this.options = $.extend({
-            cls: "center-panel app-panel",
-            renderTo:undefined            
-        }, cfg);
-        
-        this.tabPanel = $("<div />");
-        
-        this.tabList = $("<ul />");
-        
-        
-        this.initComponent = function(){
-            this.tabPanel.append(this.tabList);            
-            this.options.renderTo.append(this.tabPanel);
+            renderTo: _options.renderTo
+        }, _options);
+
+        this.tabBox = $("<div />");
+
+        this.tabsList = $("<ul />");
+
+        this.initComponent = function() {
+
+            this.tabBox.prepend(this.tabsList);
+
+           
+            
+            this.options.renderTo.append(this.tabBox);
+            this.tabBox.tabs();
+            this.tabBox.tabs("refresh");
         };
-        
-        this.addTab = function(tab){
-            
-            var title = $("<li />");
-            var titleLink = $("<a />");
-                titleLink.
-                        attr("href", "#" + tab.id).
-                        html(tab.title);
-            var closeBtn = $("<span />");
-                closeBtn.
-                        attr("role", "presentation").
-                        addClass("ui-icon ui-icon-close").
-                        html("Remove Tab");
-                        
-            
-            
-            this.tabList.append(tab.title);
-            
-            
+
+        this.createTab = function(title, id, content) {
+            this.tabsList
+                    .append(this.createTabTitle(title, id));
+
+            this.tabBox
+                    .append(this.createTabContent(id, content));
         };
-        
-        
-        this.initComponent();
-        
+
+        this.createTabTitle = function(title, id) {
+            var tt = $("<li />"),
+                    a = $("<a />"),
+                    close = $("<span />");
+
+            a
+                    .attr("href", "#" + id)
+                    .html(title);
+            close
+                    .addClass("ui-icon ui-icon-close")
+                    .attr("role", "presentation");
+
+            tt
+                    .append(a)
+                    .append(close);
+            
+            return tt;
+        };
+
+        this.createTabContent = function(id, content) {
+            var tc = $("<div />");
+
+            tc
+                    .attr("id", id)
+                    .html(content);
+            
+            return tc;
+        };
     }
 });
 

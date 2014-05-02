@@ -11,8 +11,19 @@ $.extend({
         this.list = $("<ul />");
         
         this.initComponent = function(){
+            this.setTitle();
             this.list.menu();
             this.options.renderTo.append(this.list);
+        };
+        
+        this.setTitle = function(){
+            var title = this.createNode({
+                label: this.options.title,
+            });
+            title
+                    .addClass("ui-state-disabled");
+            
+            this.list.prepend(title);
         };
         
         this.createNode = function(node){
@@ -25,9 +36,9 @@ $.extend({
                     .html(node.label);
 
             li.append(a);
-            if(node.children){
-                for(var i=0;i<node.children.length;i++){
-                    var ls = $("<ul />");
+            if(node.children && node.children.length > 0){
+                var ls = $("<ul />");
+                for(var i=0;i<node.children.length;i++){                    
                     ls.append(node.children[i]);
                 }
                 li.append(ls);                
