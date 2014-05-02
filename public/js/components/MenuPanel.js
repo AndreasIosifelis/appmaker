@@ -9,6 +9,7 @@ $.extend({
         }, _options);
 
         this.list = $("<ul />");
+        
 
         this.createTree = function() {
             for (var i = 0; i < this.options.nodes.length; i++) {
@@ -63,14 +64,6 @@ $.extend({
             this.createTree(this.options.nodes);     
 
             this.options.renderTo.append(this.list);
-        };
-        
-        this.addRootNode = function(){
-            
-        };
-        
-        this.addNode = function(){
-            
         };
 
 

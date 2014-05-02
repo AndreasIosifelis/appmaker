@@ -1,6 +1,8 @@
 $.extend({
     MainMenu:function(westPanel){
         
+        
+        
         var usersNode = {
             label:"Users",
             id:"users",
