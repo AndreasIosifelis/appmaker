@@ -4,21 +4,27 @@ $.extend({
         this.options = $.extend({
             renderTo: _options.renderTo,
             title: "Main",
+            mode: "local",
             nodes: []
         }, _options);
 
         this.list = $("<ul />");
 
-        this.createList = function(nodes, cl) {
-            var list = cl ? $("<ul />") : this.list;
-            for (var i = 0; i < nodes.length; i++) {
-                list.append(this.createNode(nodes[i]));
-                if(nodes[i].children){
-                    this.createList(nodes[i].children, true);
-                    break;
-                }
-                continue;
+        this.createTree = function() {
+            for (var i = 0; i < this.options.nodes.length; i++) {
+                var node = this.options.nodes[i];
+                this.list.append(this.createNode(node));
             }
+            this.list.menu();
+            this.createTitle();
+        };
+
+        this.createList = function(nodes, li) {
+            var ls = $("<ul />");
+            for (var i = 0; i < nodes.length; i++) {
+                ls.append(this.createNode(nodes[i]));
+            }
+            return ls;
         };
 
         this.createNode = function(node) {
@@ -31,9 +37,12 @@ $.extend({
                     .html(node.label);
 
             li.append(a);
-
+            if (node.children) {
+                var ls = this.createList(node.children, li);
+                li.append(ls);
+            }
+            
             return li;
-
         };
 
         this.createTitle = function() {
@@ -51,12 +60,17 @@ $.extend({
 
 
         this.initComponent = function() {
-            //debugger;
-            this.createList(this.options.nodes, false);
-            this.createTitle();
-            this.list.menu();
+            this.createTree(this.options.nodes);     
 
             this.options.renderTo.append(this.list);
+        };
+        
+        this.addRootNode = function(){
+            
+        };
+        
+        this.addNode = function(){
+            
         };
 
 

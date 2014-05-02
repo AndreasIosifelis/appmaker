@@ -13,8 +13,8 @@
 <body>
 
     <div id="AppContainer" class="viewport"></div>
-    <script src="assets/js/libs/handlebars.js"></script>
-    <script src="assets/js/libs/md5.js"></script>
+    <script src="public/js/libs/handlebars.js"></script>
+    <script src="public/js/libs/md5.js"></script>
     <?php
         $this->files->initFiles("js");
     ?>
