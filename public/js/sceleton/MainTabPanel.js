@@ -5,10 +5,10 @@ $.extend({
             renderTo:renderTo
         });
         
-        tabPanel.createTab("DashBoard", "DashBoard-tab","<p>This is the dashBoard Content</p>");
+        tabPanel.createTab("DashBoard", "DashBoard-tab","This is the dashBoard Content");
         
         tabPanel.initComponent();
-        
+        tabPanel.tabBox.tabs( "option", "heightStyle", "fill" );
         $.Application["MainTabPanel"] = tabPanel;
         
     }

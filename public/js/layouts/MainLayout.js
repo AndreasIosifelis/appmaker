@@ -17,17 +17,15 @@ $.extend({
         
         centerPanel
                 .addClass("center-panel")
-                .addClass("app-panel");
-        
-        
-        $.MainMenu(westPanel);
-        $.MainTabPanel(centerPanel);
-        
+                .addClass("app-panel");       
         
         $("#AppContainer")
                 .append(northPanel)
                 .append(westPanel)
                 .append(centerPanel);
+        
+        $.MainTabPanel(centerPanel);
+        $.MainMenu(westPanel);
     }
 });
 

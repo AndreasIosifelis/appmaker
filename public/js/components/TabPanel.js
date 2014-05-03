@@ -16,8 +16,9 @@ $.extend({
            
             
             this.options.renderTo.append(this.tabBox);
-            this.tabBox.tabs();
-            this.tabBox.tabs("refresh");
+            this.tabBox.tabs({
+                heightStyle:"fill"
+            });
         };
 
         this.createTab = function(title, id, content) {
